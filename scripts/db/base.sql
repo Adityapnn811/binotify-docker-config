@@ -34,6 +34,13 @@ CREATE TABLE IF NOT EXISTS Song (
     FOREIGN KEY (album_id) REFERENCES Album (album_id) ON DELETE SET NULL
 );
 
+CREATE TABLE IF NOT EXISTS Subscription (
+    creator_id INTEGER,
+    subscriber_id INTEGER,
+    FOREIGN KEY (subscriber_id) REFERENCES User (user_id) ON DELETE CASCADE,
+    PRIMARY KEY(creator_id, subscriber_id)
+);
+
 DROP TRIGGER IF EXISTS before_song_insert;
 DROP TRIGGER IF EXISTS before_song_update;
 DROP TRIGGER IF EXISTS before_song_delete;
