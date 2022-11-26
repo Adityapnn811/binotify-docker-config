@@ -20,6 +20,15 @@ services:
     depends_on:
       - mysql
 
+  redis:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass InI_PasSW0rdNy4_Redis
+    volumes:
+      - redis_data:/data
+
   mysql:
     image: mysql:8.0.0
     container_name: mysql8
@@ -62,7 +71,14 @@ services:
     environment:
       - PORT=5000
       - DATABASE_URL=mysql://root:binotifyspotipai@mysql:3306/binotifyrest
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=InI_PasSW0rdNy4_Redis
     ports:
       - 5000:5000
     depends_on:
       - mysql
+
+volumes:
+  redis_data:
+    driver: local
