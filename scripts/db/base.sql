@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS Song (
 CREATE TABLE IF NOT EXISTS Subscription (
     creator_id INTEGER,
     subscriber_id INTEGER,
+    status ENUM('PENDING', 'ACCEPTED', 'REJECTED') NOT NULL DEFAULT 'PENDING',
     FOREIGN KEY (subscriber_id) REFERENCES User (user_id) ON DELETE CASCADE,
     PRIMARY KEY(creator_id, subscriber_id)
 );
