@@ -76,6 +76,8 @@ services:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - REDIS_PASSWORD=InI_PasSW0rdNy4_Redis
+      - SOAP_API_KEY=f9f768f063b9f0b831b9b7b51a0497656972425dc512f47e2f965d37de4e0915
+      - SOAP_URL=http://hostlocal:4040
     ports:
       - 5000:5000
     depends_on:
