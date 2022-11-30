@@ -38,6 +38,8 @@ services:
     volumes:
       - ./scripts/db:/docker-entrypoint-initdb.d
     restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   adminer:
     container_name: adminer
@@ -76,6 +78,26 @@ services:
       - REDIS_PASSWORD=InI_PasSW0rdNy4_Redis
     ports:
       - 5000:5000
+    depends_on:
+      - mysql
+  
+  binotify-soap:
+    container_name: binotify-soap
+    volumes:
+      - ../binotify-soap/webservice/target:/opt
+    build:
+      context: ../binotify-soap
+      dockerfile: Dockerfile
+    environment:
+      - DB_URL=jdbc:mysql://mysql8:3306/binotifysoap
+      - DB_Username=root
+      - DB_Password=binotifyspotipai
+      - HOST=localhost
+      - PORT=80
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - 80:80
     depends_on:
       - mysql
 
