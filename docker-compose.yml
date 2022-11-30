@@ -20,7 +20,7 @@ services:
     depends_on:
       - mysql
     extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - "hostlocal:host-gateway"
 
   redis:
     image: redis:6.2-alpine
@@ -81,7 +81,7 @@ services:
     depends_on:
       - mysql
     extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - "hostlocal:host-gateway"
   
   # binotify-soap:
   #   container_name: binotify-soap
