@@ -15,6 +15,8 @@ services:
       - MYSQL_DBUSER=root
       - MYSQL_DBPASS=binotifyspotipai
       - MYSQL_DBNAME=binotifydb
+      - SOAP_API_KEY=1fd89efa578ef3a8b81aef51cc868c0c4ec2b385cec0b7bc234e6ba7f53a02c4
+      - SOAP_URL=http://hostlocal:4040
     ports:
       - 8080:80
     depends_on:
