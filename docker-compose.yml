@@ -89,21 +89,21 @@ services:
     extra_hosts:
       - "hostlocal:host-gateway"
   
-  binotify-soap:
-    container_name: binotify-soap
-    build:
-      context: ../binotify-soap
-      dockerfile: Dockerfile
-    environment:
-      - DB_URL=jdbc:mysql://mysql8:3306/binotifysoap?useSSL=false
-      - DB_Username=root
-      - DB_Password=binotifyspotipai
-      - HOST=localhost
-      - PORT=4040
-    ports:
-      - 4040:4040
-    depends_on:
-      - mysql
+  # binotify-soap:
+  #   container_name: binotify-soap
+  #   build:
+  #     context: ../binotify-soap
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     - DB_URL=jdbc:mysql://mysql8:3306/binotifysoap?useSSL=false
+  #     - DB_Username=root
+  #     - DB_Password=binotifyspotipai
+  #     - HOST=localhost
+  #     - PORT=4040
+  #   ports:
+  #     - 4040:4040
+  #   depends_on:
+  #     - mysql
 
 volumes:
   redis_data:
