@@ -44,8 +44,6 @@ services:
     restart: always
     ports:
       - 3306:3306
-    networks:
-      - test
 
   adminer:
     container_name: adminer
@@ -106,12 +104,7 @@ services:
       - 4040:4040
     depends_on:
       - mysql
-    networks:
-      - test
 
 volumes:
   redis_data:
     driver: local
-networks:
-  test:
-    driver: bridge
