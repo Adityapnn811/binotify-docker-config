@@ -42,8 +42,6 @@ services:
     volumes:
       - ./scripts/db:/docker-entrypoint-initdb.d
     restart: always
-    ports:
-      - 3306:3306
 
   adminer:
     container_name: adminer
@@ -88,7 +86,7 @@ services:
       - mysql
     extra_hosts:
       - "hostlocal:host-gateway"
-  
+
   # binotify-soap:
   #   container_name: binotify-soap
   #   build:

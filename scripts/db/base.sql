@@ -31,6 +31,8 @@ CREATE TABLE `Song` (
 -- AddForeignKey
 ALTER TABLE `Song` ADD CONSTRAINT `Song_penyanyi_id_fkey` FOREIGN KEY (`penyanyi_id`) REFERENCES `User`(`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
+INSERT INTO User (email, password, username, name, isAdmin) VALUES ('admin@admin.com', '$2a$10$uQFiEZNCjWLkufGHPDIOW.ZTTomtPpYD4u4kPbDl1c4VlxqisQ/eO', 'admin', 'admin', true);
+
 USE binotifysoap;
 
 CREATE TABLE IF NOT EXISTS Logging (
