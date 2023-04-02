@@ -32,6 +32,20 @@ CREATE TABLE `Song` (
 ALTER TABLE `Song` ADD CONSTRAINT `Song_penyanyi_id_fkey` FOREIGN KEY (`penyanyi_id`) REFERENCES `User`(`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 INSERT INTO User (email, password, username, name, isAdmin) VALUES ('admin@admin.com', '$2a$10$uQFiEZNCjWLkufGHPDIOW.ZTTomtPpYD4u4kPbDl1c4VlxqisQ/eO', 'admin', 'admin', true);
+INSERT INTO User (email, password, username, name, isAdmin) VALUES ('rockstar@gmail.com', '$2a$10$uQFiEZNCjWLkufGHPDIOW.ZTTomtPpYD4u4kPbDl1c4VlxqisQ/eO', 'rockstar', 'Rockstar', false);
+INSERT INTO User (email, password, username, name, isAdmin) VALUES ('popstar@gmail.com', '$2a$10$uQFiEZNCjWLkufGHPDIOW.ZTTomtPpYD4u4kPbDl1c4VlxqisQ/eO', 'popstar', 'Popstar', false);
+INSERT INTO User (email, password, username, name, isAdmin) VALUES ('jazzstar@gmail.com', '$2a$10$uQFiEZNCjWLkufGHPDIOW.ZTTomtPpYD4u4kPbDl1c4VlxqisQ/eO', 'jazzstar', 'Jazzstar', false);
+INSERT INTO Song (Judul, penyanyi_id, Audio_path) VALUES ('Lagu Rock Keren', 2, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+INSERT INTO Song (Judul, penyanyi_id, Audio_path) VALUES ('Lagu Rock 2', 2, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3');
+INSERT INTO Song (Judul, penyanyi_id, Audio_path) VALUES ('Lagu Rock 3', 2, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+INSERT INTO Song (Judul, penyanyi_id, Audio_path) VALUES ('Lagu Rock 4', 2, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3');
+INSERT INTO Song (Judul, penyanyi_id, Audio_path) VALUES ('Lagu Rock 5', 2, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+INSERT INTO Song (Judul, penyanyi_id, Audio_path) VALUES ('Lagu Rock 6', 2, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3');
+INSERT INTO Song (Judul, penyanyi_id, Audio_path) VALUES ('Lagu Rock 7', 2, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+INSERT INTO Song (Judul, penyanyi_id, Audio_path) VALUES ('Lagu Rock 8', 2, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3');
+INSERT INTO Song (Judul, penyanyi_id, Audio_path) VALUES ('Lagu Rock 9', 2, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+INSERT INTO Song (Judul, penyanyi_id, Audio_path) VALUES ('Lagu Rock 10', 2, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3');
+
 
 USE binotifysoap;
 
@@ -231,3 +245,14 @@ VALUES ('adit@gmail.com', '$2y$10$v94G9lgm9kaNPK1B7DB5COjaPXaZdyvSurCIlWqav/vg3B
 
 INSERT INTO User (email, password, username, is_admin)
 VALUES ('nathan@gmail.com', '$2y$10$vSGgl/xA.ydPUfumzDNiROA1Gm3sW1jgOUzM90Hork0VKR9/7NFA6', 'nathan', false);
+
+INSERT INTO Subscription (creator_id, subscriber_id, status) VALUES (2, 3, 'PENDING');
+INSERT INTO Subscription (creator_id, subscriber_id, status) VALUES (3, 3, 'PENDING');
+INSERT INTO Subscription (creator_id, subscriber_id, status) VALUES (4, 3, 'PENDING');
+INSERT INTO Subscription (creator_id, subscriber_id, status) VALUES (2, 4, 'PENDING');
+INSERT INTO Subscription (creator_id, subscriber_id, status) VALUES (3, 4, 'PENDING');
+INSERT INTO Subscription (creator_id, subscriber_id, status) VALUES (4, 4, 'PENDING');
+INSERT INTO Subscription (creator_id, subscriber_id, status) VALUES (3, 5, 'PENDING');
+INSERT INTO Subscription (creator_id, subscriber_id, status) VALUES (4, 5, 'PENDING');
+INSERT INTO Subscription (creator_id, subscriber_id, status) VALUES (2, 2, 'PENDING');
+INSERT INTO Subscription (creator_id, subscriber_id, status) VALUES (4, 2, 'PENDING');
